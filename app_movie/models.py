@@ -15,8 +15,16 @@ LANGUAGE = (
 class Rating(models.Model):
     name = models.CharField(max_length=10, unique=True)  # make it unique and indexed for filter/search
 
+    def __str__(self):
+        return self.name
+
+
 class Genre(models.Model):
     name = models.CharField(max_length=10, db_index=True)  # make it unique and indexed for filter/search
+
+    def __str__(self):
+        return self.name
+
 
 class Movie(models.Model):
     name = models.CharField(max_length=255, db_index=True)  # indexed for filter/search
