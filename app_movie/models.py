@@ -21,7 +21,7 @@ class Movie(models.Model):
         ('TM', 'Tamil'),
         ('MD', 'Mandarin'),
         # and so on ..
-    ))
+    ), db_index=True)  # could be indexed for filtering by language
     user_rating = models.FloatField()
 
     genre = models.ManyToManyField(Genre, related_name="movies_in_genre")
