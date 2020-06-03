@@ -39,6 +39,7 @@ class Movie(models.Model):
     rating_label = models.CharField(max_length=100)  # I put the rating label here, because movies withthe same MPAA Rating could have different label
 
     slug = models.SlugField(unique=True) # make it unique and indexed for url hit
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True) # make it indexed for sorting
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         if self.id is None or (self.slug is not None and slugify(self.name) not in self.slug):
