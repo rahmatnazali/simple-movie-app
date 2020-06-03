@@ -188,7 +188,7 @@
   "imgPath": "assets/images/baaghi.jpg",
   "duration": 133,
   "genre": [
-  "Action', 'Romance"
+  "Action", "Romance"
   ],
   "language": "Hindi",
   "mpaaRating": {
@@ -220,7 +220,7 @@
   "imgPath": "assets/images/criminal.jpg",
   "duration": 113,
   "genre": [
-  "Action', 'Drama"
+  "Action", "Drama"
   ],
   "language": "English",
   "mpaaRating": {
