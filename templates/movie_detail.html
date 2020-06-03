@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Detail</title>
+</head>
+<body>
+
+    <h3>{{ movie.name }}</h3>
+    <p>{{ movie.rating.name }}: {{ movie.rating_label }}</p>
+
+    <p>Thumbnail: </p>
+    <img src="{{ movie.thumbnail }}" alt="{{ movie.thumbnail }}"/>
+
+    <h4>Details</h4>
+    <p>Genre(s):
+        {% for genre in movie.genre.all %}
+            {{ genre.name }}
+        {% empty %}
+            No genre
+        {% endfor %}
+    </p>
+    <p>Language: {{ movie.get_language_display }}</p>
+    <p>Duration: {{ movie.duration }}</p>
+    <p>User Rating: {{ movie.user_rating }}</p>
+
+
+    <h4>Synopsis</h4>
+    <p>{{ movie.description }}</p>
+
+</body>
+</html>
