@@ -6,17 +6,19 @@
 </head>
 <body>
 
+    <h1>Movie list</h1>
+
+    <form>
+        <label for="searchbar">Search movies:</label>
+        <input id="searchbar" />
+        {% comment %}todo: add search bar{% endcomment %}
+    </form>
+
     {% for movie in page_obj %}
         <h4><a href={{ movie.slug }}>{{ movie.name }}</a></h4>
         <p>Thumbnail: {{ movie.thumbnail }}</p>
         <p>User rating: {{ movie.user_rating }}</p>
-        <p>Genre(s):
-            {% for genre in movie.genre.all %}
-                {{ genre.name }}
-            {% empty %}
-                No genre
-            {% endfor %}
-        </p>
+        <p>Genre(s): {% for genre in movie.genre.all %} {{ genre.name }}{% empty %} No genre {% endfor %}</p>
 
     {% empty %}
     <p>No content.</p>
