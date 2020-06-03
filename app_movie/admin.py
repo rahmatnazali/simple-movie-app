@@ -12,6 +12,7 @@ class GenreAdmin(admin.ModelAdmin):
 
 class MovieAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'slug')
+    filter_horizontal = ('genre',)
 
 
 admin.site.register(Movie, MovieAdmin)
