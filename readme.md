@@ -4,11 +4,19 @@
 - movies data: [json](movies.json)
 - key features and/or requirements
     - Import movie from json (Data is given in movies.json, design, model and implement a Django app for this data.)
+        - I did this with django's built in command
     - Develop Movie Listing Page
+        - I used django's generic list view
     - Develop Movie Detail Page
+        - I used django's generic detail view
     - Develop Javascript search bar which filters movies listed on the Movie Listing Page based on their names
+        - Currently just implemented the search bar with jquery, and drf-based search API 
+        - I must admit that I can do this better. For production apps, I prefer to build with more sophisticated tech. I'd probably go go with react, debounced the search input component for several ms, and trigger an API call with modules like axios. I hope this can be tolerated.
+    -  (optional) I tried to implemented S3BotoStorage
+        - all the image is saved at AWS S3 bucket, so django didn't need to serve all the thumbnail.
+        - Django only needs to create a pre-signed URL, which is, I believe, is a lot less work
 - techs used:
     - Django mvc
     - No modern frontend JS framework is used, for simplicity purpose
     - aws s3 for storing images thumbnail
-    - for the IDE,  I used PyCharm Professional
+    - for the IDE, I used PyCharm Professional, if that matters
