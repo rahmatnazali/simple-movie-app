@@ -39,8 +39,7 @@ user_input.on('keyup', function () {
     if (scheduled_function) {
         clearTimeout(scheduled_function)
     }
-
-    if ($(this).val().length > 0) {
+    if ($(this).val().trim().length > 0) {
         const request_parameters = {
             search: $(this).val() // value of user_input: the HTML element with ID user-input
         };
