@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie List</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    {% comment %}<script src="{% static 'admin' %}" type="application/javascript"></script>{% endcomment %}
 </head>
 <body>
 
     <h1>Movie list</h1>
 
-    <form>
-        <label for="searchbar">Search movies:</label>
-        <input id="searchbar" />
-        {% comment %}todo: add search bar{% endcomment %}
-    </form>
+    {# icon and search-box #}
+    <div class="col-6 align-left">
+        <label for="user-input"></label>
+{#        <i id="search-icon" class="fas fa-search"></i>#}
+        <input id="user-input" placeholder="Search">
+    </div>
+
+    {# artist-list section #}
+    <div id="replaceable-content" class="col-6">
+         {% include "movie_result.html" %}
+    </div>
 
     {% for movie in page_obj %}
         <h4><a href={{ movie.slug }}>{{ movie.name }}</a></h4>
@@ -42,5 +51,7 @@
             {% endif %}
         </span>
     </div>
+
+    <script>{% include "ajax_search.js" %}</script>
 </body>
 </html>
