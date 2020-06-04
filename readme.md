@@ -12,7 +12,7 @@
     - Develop Javascript search bar which filters movies listed on the Movie Listing Page based on their names
         - Currently just implemented the search bar with jquery, and drf-based search API 
         - I must admit that I can do this better. For production apps, I prefer to build with more sophisticated tech. I'd probably go go with react, debounced the search input component for several ms, and trigger an API call with modules like axios. I hope this can be tolerated.
-    -  (optional) I tried to implemented S3BotoStorage
+    -  (optional) I tried to implemented S3Boto3Storage
         - all the image is saved at AWS S3 bucket, so django didn't need to serve all the thumbnail.
         - Django only needs to create a pre-signed URL, which is, I believe, is a lot less work
 - techs used:
