@@ -7,14 +7,14 @@ from rest_framework import pagination
 from rest_framework import response
 from .serializers import MovieSearchSerializer
 
-select_for_list = ('name', 'thumbnail', 'user_rating', 'genre', 'slug', 'rating', 'genre')
+select_for_list = ('name', 'thumbnail', 'user_rating', 'duration', 'slug', 'rating')
 select_for_detail = ('name', 'thumbnail', 'description', 'language', 'duration', 'user_rating', 'genre', 'rating', 'rating_label', 'genre')
 
 
 # Create your views here.
 class MovieList(ListView):
     model = Movie
-    queryset = Movie.objects.select_related('rating').prefetch_related('genre').order_by('-created_at').only(*select_for_list)
+    queryset = Movie.objects.select_related('rating').order_by('-created_at').only(*select_for_list)
     paginate_by = 5
     template_name = 'movie_list.html'
 
