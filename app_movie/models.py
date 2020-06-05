@@ -25,11 +25,12 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
-
 class Movie(models.Model):
     name = models.CharField(max_length=255, db_index=True)  # indexed for filter/search
     description = models.TextField()
     thumbnail = models.URLField()
+    thumbnail_s3 = models.FileField(null=True, blank=True)
+
     duration = models.IntegerField()
     language = models.CharField(max_length=2, choices=LANGUAGE, db_index=True)  # could be indexed for filtering by language
     user_rating = models.FloatField()

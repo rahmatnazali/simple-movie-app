@@ -29,7 +29,7 @@ class Command(BaseCommand):
                 rating, rating_created = Rating.objects.get_or_create(name=mpaa_rating_type, defaults={'name': mpaa_rating_type})
                 if rating_created: print(f"created Rating {rating.name}")
 
-                m = Movie.objects.create(
+                m = Movie(
                     name=movie.get("name"),
                     description=movie.get("description"),
                     duration=int(movie.get("duration", 0)),
@@ -38,6 +38,15 @@ class Command(BaseCommand):
                     rating=rating,
                     rating_label=mpaa_rating.get("label"),
                 )
+
+                img_path = movie.get("imgPath")
+                m.thumbnail = img_path
+
+                # trying to store the file into s3
+                with open(img_path) as i:
+                    m.thumbnail_s3.save(img_path, i.read())
+
+                m.save()
 
                 # get or create genre
                 genres = movie.get("genre")
