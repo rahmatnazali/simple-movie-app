@@ -12,9 +12,9 @@
         - Currently just implemented a very simple search bar with debounced jquery and drf-based search API. Disclaimer: I get it from [here](https://openfolder.sh/django-tutorial-as-you-type-search-with-ajax)
         - I must admit that I can do this better. For production apps, I prefer to build with more sophisticated tech. I'd probably go with react, debounced the search input component for several ms, and trigger an API call with modules like axios. 
         Again, considered for simplicity, I choosed this instead of implementing whole new app just for the search bar. I hope this can be tolerated.
-    -  (optional) I tried to implemented S3Boto3Storage
-        - all the image is saved at AWS S3 bucket, so django didn't need to serve all the thumbnail.
-        - Django only needs to create a pre-signed URL, which is, I believe, is a lot less work
+    -  (optional) I tried to implement S3Boto3Storage
+        - all the movie's thumbnail and static files are saved at AWS S3 bucket, so django didn't need to serve all of this and goes directly into s3.
+        - Django only needs to create a pre-signed URL, which I believe, is a lot less work
 - techs used:
     - Django mvc
     - aws s3 for storing images thumbnail
