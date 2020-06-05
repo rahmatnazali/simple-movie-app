@@ -2,5 +2,6 @@ Django
 djangorestframework
 markdown
 django-filter
+boto3
 django-storages
 python-decouple
