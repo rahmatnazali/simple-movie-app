@@ -18,4 +18,4 @@
 - techs used:
     - Django mvc
     - aws s3 for storing images thumbnail
-    - for the IDE, I used PyCharm Professional, if that matters/
+    - for the IDE, I used PyCharm Professional, if that matters.
